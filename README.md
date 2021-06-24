@@ -96,4 +96,20 @@ Use of Docker was a requirement (which is great!) and since many of Nameko's fea
 
 RabbitMQ is a tried and tested message-broker that has a very established history of production usage. Definitely a big win that something so robust is used as the foundation for the Nameko framework. It allows us to use existing documentation and leverage the years of work put into the library for us to benefit from.
 
-Docker feels like a decently quick and easy way to product isolated environments for each project. It feels like an excellent fit for a microservice project since here are really good container orchestration tools we can use to help maintain our services. Docker's ability to encapsulate everything the application needs to run, allows us to easily take this development project and turn it into a production ready service. By leveraging Docker we can have a lot of confidence that our service will run in prouction as it did in the development environment.
+Docker feels like a decently quick and easy way to produce isolated environments for each project. It feels like an excellent fit for a microservice project since there are really good container orchestration tools we can use to help maintain our services. Docker's ability to encapsulate everything the application needs to run, allows us to easily take this development project and turn it into a production ready service. By leveraging Docker we can have a lot of confidence that our service will run in prouction as it did in the development environment.
+
+A con that came to mind was if Nameko is supported enough for long term use. I noticed there has not been much development activity on the repo. Since I do not know too much about it I am not sure how much it is used in the industry but this could be a potential flag to explore if it will still be maintained for the forseeable future.
+
+### Time breakdown
+
+- I played around with Nameko a bit during the research part of reading the libraries documentation. Made a quick hello world version and essentially a small and basic throwaway version of this take-home assesment. (±1.5 hours)
+
+- I had familiarity with Docker and Docker Compose so the general set up of the containerization was about ±45min. There was some debugging involved when I faced an issue so it did not go 100% smoothly at first.
+
+- Writing of the actual functions that the service provided was fairly quick and straight forward. I think the longest time spent here was doing some background research on Huffman encoding. I also looked if there were other String compression algorithm libraries available. The [dahuffman](https://github.com/soxofaan/dahuffman) library was well documented and straight forward to use. (±30-40min)
+
+- I spent about another half hour or more debugging an issue where I could run the `nameko shell` command once in the containers shell. I inspected the container after reading a Stackoverflow post that suggested if a `config.yml` was present, then `nameko shell --config config.yml` should be used. (±30min)
+
+- This write up and the documentation took about ±40 minutes or more after some editing and changes.
+
+**Total time (estimate): ±4hrs**
