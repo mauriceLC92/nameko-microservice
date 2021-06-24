@@ -35,15 +35,19 @@ docker-compose up
 First, you will need to open the shell of the docker container that's running
 
 - Use `docker ps` to get the name of the existing container
-- Find the container ID associated with this image
+- Find the container ID associated with this image - You will see an image named `nameko-microservice_utilities`. Use the container ID for that image in the next command.
 - Use the command `docker exec -it <container id> /bin/bash` to get a bash shell in the container
 
-Now that you are in the shell, you can do the following:
+Now that you are in the shell of the container, we want to connect to Nameko's shell:
+
+Run the following: `nameko shell --config config.yml`
+
+You can now run any of the following functions:
 
 ### Square each odd number: `List[int] -> List[int]`
 
 ```
-n.rpc.utilities.square_each_odd_number([1,2,3,4,5,6,7,8,9,0])
+n.rpc.utilities_service.square_each_odd_number([1,2,3,4,5,6,7,8,9,0])
 ```
 
 ### Square each odd number: `List[int] -> List[int]`
