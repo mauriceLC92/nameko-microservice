@@ -6,6 +6,12 @@ services:
     container_name: "rabbitmq-invictus-capital"
     ports:
       - 5672:5672
+    environment:
+      RABBIT_PASSWORD: ${RABBIT_PASSWORD_DEV}
+      RABBIT_USER: ${RABBIT_USER_DEV}
+      RABBIT_HOST: ${RABBIT_HOST_DEV}
+      RABBIT_PORT: ${RABBIT_PORT_DEV}
+      RABBIT_MANAGEMENT_PORT: ${RABBIT_MANAGEMENT_PORT_DEV}
 
   utilities:
     build: ./utilities
