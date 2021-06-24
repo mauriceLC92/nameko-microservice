@@ -58,7 +58,7 @@ The output will look like the following:
 [1, 9, 25, 49, 81]
 ```
 
-### Encode a list of strings: `List[string] -> List[string]`
+### Encode a list of strings: `List[string] -> dict`
 
 ```
 n.rpc.utilities_service.encode(["hey", "hello", "python", "and", "code"])

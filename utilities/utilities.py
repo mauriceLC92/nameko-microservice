@@ -14,7 +14,7 @@ class UtilitiesService:
     @rpc
     def encode(self, words: List[str]) -> dict:
         codec = load_shakespeare()
-        encoded_words = [{item: str(codec.encode(item))} for item in words]
+        encoded_words = {word: str(codec.encode(word)) for word in words}
         return encoded_words
 
     @rpc
