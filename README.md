@@ -1,6 +1,6 @@
 # Nameko Python Microservice
 
-A utilities microservices that provides provides the following functionality:
+A utilities microservice that provides the following functionality:
 
 - A function that squares each odd number in a given list of integers.
 - A function that accepts a list of strings, and returns a dictionary of the strings - the key being
@@ -10,7 +10,7 @@ A utilities microservices that provides provides the following functionality:
 
 ## Installation
 
-Please ensure that you have Docker desktop running.
+⚠️ **Please ensure that you have Docker desktop running.**
 
 ### Clone this repository and change your directory to the repo's home folder
 
@@ -25,6 +25,8 @@ SSH
 ```
 git clone git@github.com:mauriceLC92/nameko-microservice.git && cd nameko-microservice
 ```
+
+To get the service up and running run the following command in your terminal:
 
 ```bash
 docker-compose up
@@ -50,16 +52,34 @@ You can now run any of the following functions:
 n.rpc.utilities_service.square_each_odd_number([1,2,3,4,5,6,7,8,9,0])
 ```
 
+The output will look like the following:
+
+```
+[1, 9, 25, 49, 81]
+```
+
 ### Encode a list of strings: `List[string] -> List[string]`
 
 ```
-n.rpc.utilities.encode(["hey", "hello", "python", "and", "code"])
+n.rpc.utilities_service.encode(["hey", "hello", "python", "and", "code"])
+```
+
+The output will look like the following:
+
+```
+[{'hey': "b'.\\xa4'"}, {'hello': "b'.\\x94\\x9c'"}, {'python': "b'\\xb1L\\x13\\x81'"}, {'and': "b'@Y'"}, {'code': "b'a\\xd7\\xc7'"}]
 ```
 
 ### Decode a string that has already been encoded: `str -> str`
 
 ```
-n.rpc.utilities.decode([1,2,3,4,5,6,7,8,9,0])
+n.rpc.utilities_service.decode("b'a\\xd7\\xc7'")
+```
+
+The output will look like the following:
+
+```
+code
 ```
 
 ## My thoughts on the assessment
