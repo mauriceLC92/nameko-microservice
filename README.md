@@ -50,14 +50,30 @@ You can now run any of the following functions:
 n.rpc.utilities_service.square_each_odd_number([1,2,3,4,5,6,7,8,9,0])
 ```
 
-### Square each odd number: `List[int] -> List[int]`
+### Encode a list of strings: `List[string] -> List[string]`
 
 ```
-n.rpc.utilities.square_each_odd_number([1,2,3,4,5,6,7,8,9,0])
+n.rpc.utilities.encode(["hey", "hello", "python", "and", "code"])
 ```
 
-### Square each odd number: `List[int] -> List[int]`
+### Decode a string that has already been encoded: `str -> str`
 
 ```
-n.rpc.utilities.square_each_odd_number([1,2,3,4,5,6,7,8,9,0])
+n.rpc.utilities.decode([1,2,3,4,5,6,7,8,9,0])
 ```
+
+## My thoughts on the assessment
+
+I found this assessment to be awesome! I have some familiarity and usage with Docker and I enjoyed that I got to use that knowledge in the test itself. I am not too familiar with Nameko or other frameworks for microservices so it was great to learn of its existence. It was also very straightforward to read the documentation to get up and running. When reading about the string compression bit, I admittedly first thought of a common interview style question that asks to compress a string such as `AAAABB` which would result in `A3B2`. Was thankful for the suggestion to use the Huffman encoding. Luckily there was a well-implemented library that made this encoding and decoding quite easy to use.
+
+### Decisions made
+
+Regarding the code itself, I made sure to use list comprehensions where needed so that the code was idiomatic Python. This would allow anyone reviewing and reading the code to immediately understand my intent was to generate a new list from a given list.
+
+Use of Docker was a requirement (which is great!) and since many of Nameko's features rely on RabbitMQ, it made sense to containerize its usage as well. Else we would need to start all our containers manually for the containerized project components. This is where Docker Compose steps in and allows us to spin up and take down our services with one command.
+
+### Pros and Cons
+
+RabbitMQ is a tried and tested message-broker that has a very established history of production usage. Definitely a big win that something so robust is used as the foundation for the Nameko framework. It allows us to use existing documentation and leverage the years of work put into the library for us to benefit from.
+
+Docker feels like a decently quick and easy way to product isolated environments for each project. It feels like an excellent fit for a microservice project since here are really good container orchestration tools we can use to help maintain our services. Docker's ability to encapsulate everything the application needs to run, allows us to easily take this development project and turn it into a production ready service. By leveraging Docker we can have a lot of confidence that our service will run in prouction as it did in the development environment.
