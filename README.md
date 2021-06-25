@@ -67,7 +67,7 @@ n.rpc.utilities_service.encode(["hey", "hello", "python", "and", "code"])
 The output will look like the following:
 
 ```
-[{'hey': "b'.\\xa4'"}, {'hello': "b'.\\x94\\x9c'"}, {'python': "b'\\xb1L\\x13\\x81'"}, {'and': "b'@Y'"}, {'code': "b'a\\xd7\\xc7'"}]
+{'hey': "b'.\\xa4'"}, {'hello': "b'.\\x94\\x9c'"}, {'python': "b'\\xb1L\\x13\\x81'"}, {'and': "b'@Y'"}, {'code': "b'a\\xd7\\xc7'"}
 ```
 
 ### Decode a string that has already been encoded: `str -> str`
